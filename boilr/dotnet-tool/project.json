@@ -1,0 +1,7 @@
+{
+	"PackageId": "Company.MyDotnetTool",
+	"SolutionName": "MyDotnetTool",
+	"Author": "My Company",
+	"ToolCommandName": "my-dotnet-tool",
+	"RepositoryUrl": "https://github.com/mycompany"
+}

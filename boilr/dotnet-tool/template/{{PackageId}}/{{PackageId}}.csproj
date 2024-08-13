@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>{{PackageId}}</PackageId>
+		<Authors>{{Author}}</Authors>
+		<RepositoryUrl>{{RepositoryUrl}}</RepositoryUrl>
+		<Copyright>"© $(CompanyName) $([System.DateTime]::Now.ToString(`yyyy`))"</Copyright>
+		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+	<!-- dotnet-tool -->
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<ToolCommandName>{{ToolCommandName}}</ToolCommandName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<Choose>
+		<When Condition=" '$(Configuration)'=='Release' ">
+			<PropertyGroup>
+				<PackAsTool>true</PackAsTool>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+	<!-- Linux development -->
+	<Choose>
+		<When Condition=" '$(Configuration)'=='Debug' ">
+			<PropertyGroup>
+				<RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+</Project>
